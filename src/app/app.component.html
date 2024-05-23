@@ -1,0 +1,61 @@
+<style>
+  .calculator {
+    margin: 50px auto;
+    padding: 20px;
+    width: 320px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  .calculator .display {
+    height: 60px;
+    width: 270px;
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: 24px;
+    line-height: 60px;
+    background: #333;
+    color: #fff;
+    padding: 0 20px;
+    border-radius: 5px;
+  }
+  .calculator .btn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin: 5px;
+  }
+</style>
+
+<div class="container">
+  <div class="calculator">
+    <div><input class="display" id="display"  [(ngModel)]="result"></div>
+    <div class="row">
+      <button class="btn btn-secondary col-3" (click)="inputNumber(7)">7</button>
+      <button class="btn btn-secondary col-3" (click)="inputNumber(8)">8</button>
+      <button class="btn btn-secondary col-3" (click)="inputNumber(9)">9</button>
+      <button class="btn btn-warning col-3" (click)="inputOperator('/')">/</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-secondary col-3" (click)="inputNumber(4)">4</button>
+      <button class="btn btn-secondary col-3" (click)="inputNumber(5)">5</button>
+      <button class="btn btn-secondary col-3" (click)="inputNumber(6)">6</button>
+      <button class="btn btn-warning col-3" (click)="inputOperator('*')">*</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-secondary col-3" (click)="inputNumber(1)">1</button>
+      <button class="btn btn-secondary col-3" (click)="inputNumber(2)">2</button>
+      <button class="btn btn-secondary col-3" (click)="inputNumber(3)">3</button>
+      <button class="btn btn-warning col-3" (click)="inputOperator('-')">-</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-secondary col-3" (click)="inputNumber(0)">0</button>
+      <button class="btn btn-secondary col-3" (click)="inputDecimal('.')">.</button>
+      <button class="btn btn-success col-6" (click)="calculate()">=</button>
+      <button class="btn btn-warning col-3" (click)="inputOperator('+')">+</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-danger col-12" (click)="clear()">C</button>
+    </div>
+  </div>
+</div>
